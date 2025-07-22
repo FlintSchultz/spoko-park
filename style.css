@@ -1,24 +1,117 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #fafafa;
-  color: #333;
+/* Reset */
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
 }
-header, section, footer {
-  padding: 20px;
-  text-align: center;
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #121212;
+  color: #eee;
+  overflow-x: hidden;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: 60vh;
+  background: url('assets/shot1.png') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.6);
 }
 .logo {
-  max-width: 120px;
-  margin-bottom: 10px;
+  height: 80px;
+  mix-blend-mode: screen;
+  margin-bottom: 20px;
 }
-.slider img {
-  max-width: 90%;
-  border: 1px solid #ccc;
-  margin: 10px auto;
+.hero-desc {
+  max-width: 600px;
+  text-align: center;
+  z-index: 1;
+  font-size: 1.1rem;
+}
+
+/* Glitch animations */
+@keyframes glitch {
+  0% {transform: none;}
+  20% {transform: skew(0.5deg) translate(2px);clip-path: inset(40% 0 45% 0);}
+  40% {transform: skew(-0.5deg) translate(-2px);clip-path: inset(30% 0 54% 0);}
+  60% {transform: skew(0.5deg) translate(2px);clip-path: inset(50% 0 30% 0);}
+  80% {transform: skew(-0.5deg) translate(-2px);clip-path: inset(20% 0 65% 0);}
+  100% {transform: none;clip-path: inset(0);}
+}
+.glitch-text, .glitch {
+  position: relative;
+  animation: glitch 2s infinite;
+}
+
+/* Slider */
+.screenshots {
+  padding: 40px 20px;
+  background: #181818;
+  text-align: center;
+}
+.slider {
+  display: flex;
+  overflow: hidden;
+  width: 90%;
+  margin: 20px auto;
+}
+.slide {
+  min-width: 100%;
+  transition: 0.5s;
+  flex-shrink: 0;
+}
+.slide img {
+  width: 100%;
+  border: 4px solid #333;
+}
+
+/* Slider auto scroll */
+@keyframes slideAnim {
+  0%, 33% {transform: translateX(0);}
+  34%, 66% {transform: translateX(-100%);}
+  67%, 99% {transform: translateX(-200%);}
+}
+.slider {
+  animation: slideAnim 12s infinite;
+}
+
+/* Description block */
+.description {
+  padding: 40px 20px;
+  background: #121212;
+  text-align: center;
+}
+.description ul {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.description li {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* Policy and contacts */
+section.policy, section.contacts {
+  padding: 30px 20px;
+  background: #181818;
+  text-align: center;
 }
 a {
-  color: #007aff;
-  text-decoration: none;
+  color: #4AE;
+}
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #0D0D0D;
+  font-size: 0.9rem;
 }
