@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,15 +7,23 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <div class="lang-switch">
+    <button id="en-btn" class="active">EN</button>
+    <button id="ru-btn">RU</button>
+  </div>
+
   <header class="hero">
     <div class="overlay"></div>
-    <img src="assets/spoko_park_logo.png" alt="Логотип" class="logo glitch" />
-    <h1 class="glitch-text">Добро пожаловать в SPOKO PARK</h1>
-    <p class="hero-desc">Удобное приложение для поиска, бронирования и оплаты парковок — быстро, просто, безопасно.</p>
+    <img src="assets/spoko_park_logo.png" alt="Logo" class="logo glitch" />
+    <h1 class="glitch-text" data-en="Welcome to SPOKO PARK" data-ru="Добро пожаловать в SPOKO PARK">Welcome to SPOKO PARK</h1>
+    <p class="hero-desc" data-en="Smart parking app — fast, simple, secure!"
+       data-ru="Умное приложение для парковки — быстро, просто, безопасно.">
+       Smart parking app — fast, simple, secure!
+    </p>
   </header>
 
   <section class="screenshots">
-    <h2>Скриншоты</h2>
+    <h2 data-en="Screenshots" data-ru="Скриншоты">Screenshots</h2>
     <div class="slider">
       <div class="slide"><img src="assets/screenshot1.png" alt="" /></div>
       <div class="slide"><img src="assets/screenshot2.png" alt="" /></div>
@@ -25,31 +33,76 @@
       <div class="slide"><img src="assets/screenshot6.png" alt="" /></div>
       <div class="slide"><img src="assets/screenshot7.png" alt="" /></div>
       <div class="slide"><img src="assets/screenshot8.png" alt="" /></div>
-      <div class="slide"><img src="assets/screenshot9.png" alt="" /></div>
+      <div class="dots"></div>
     </div>
   </section>
 
   <section class="description">
-    <h2>Почему Spo­ko Park?</h2>
+    <h2 data-en="Why SPOKO PARK?" data-ru="Почему SPOKO PARK?">Why SPOKO PARK?</h2>
     <ul>
-      <li>🔒 Автоматическое бронирование парковки рядом</li>
-      <li>💳 Оплата прямо в приложении</li>
+      <li data-en="🔒 Auto-reserve parking nearby" data-ru="🔒 Автоматическое бронирование парковки рядом">🔒 Auto-reserve parking nearby</li>
+      <li data-en="💳 Pay within the app" data-ru="💳 Оплата прямо в приложении">💳 Pay within the app</li>
+      <li data-en="🧭 Navigate to your spot" data-ru="🧭 Навигация до места">🧭 Navigate to your spot</li>
+      <li data-en="⚡ Modern glitch UI for cool vibe" data-ru="⚡ Современный глитч-дизайн для стиля">⚡ Modern glitch UI for cool vibe</li>
     </ul>
   </section>
 
   <section class="policy">
-    <h2>Политика конфиденциальности</h2>
-    <p><a href="#!">Здесь ссылка на ваш документ</a></p>
+    <h2 data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</h2>
+    <p><a href="#!" data-en="Link to document" data-ru="Ссылка на документ">Link to document</a></p>
   </section>
 
   <section class="contacts">
-    <h2>Контакты</h2>
-    <p>Email: example@mail.com</p>
-    <p>Телефон: +7 (999) 123‑45‑67</p>
+    <h2 data-en="Contacts" data-ru="Контакты">Contacts</h2>
+    <p data-en="Email: example@mail.com" data-ru="Email: example@mail.com">Email: example@mail.com</p>
+    <p data-en="Phone: +7 (999) 123‑45‑67" data-ru="Телефон: +7 (999) 123‑45‑67">Phone: +7 (999) 123‑45‑67</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 SPOKO PARK. Все права защищены.</p>
+    <p data-en="© 2025 SPOKO PARK. All rights reserved."
+       data-ru="© 2025 SPOKO PARK. Все права защищены.">
+       © 2025 SPOKO PARK. All rights reserved.
+    </p>
   </footer>
+
+  <script>
+    // Language switcher
+    const enBtn = document.getElementById('en-btn'), ruBtn = document.getElementById('ru-btn');
+    enBtn.onclick = () => switchLang('en');
+    ruBtn.onclick = () => switchLang('ru');
+    function switchLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.dataset[lang];
+      });
+      enBtn.classList.toggle('active', lang === 'en');
+      ruBtn.classList.toggle('active', lang === 'ru');
+    }
+
+    // Slider logic
+    const slider = document.querySelector('.slider'),
+          slides = document.querySelectorAll('.slide'),
+          dotsContainer = document.querySelector('.dots');
+    let current = 0;
+    slides.forEach((_, i) => {
+      const d = document.createElement('span');
+      d.className = 'dot';
+      d.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(d);
+    });
+    const dots = document.querySelectorAll('.dot');
+    function goToSlide(n) {
+      current = n;
+      slider.style.transform = `translateX(-${100 * current}%)`;
+      updateDots();
+    }
+    function updateDots() {
+      dots.forEach((d,i)=> d.classList.toggle('active', i === current));
+    }
+    function nextSlide() {
+      goToSlide((current + 1) % slides.length);
+    }
+    updateDots();
+    setInterval(nextSlide, 4000);
+  </script>
 </body>
 </html>

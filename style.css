@@ -1,117 +1,43 @@
-/* Reset */
-* {
-  margin: 0; padding: 0;
-  box-sizing: border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #121212;
-  color: #eee;
-  overflow-x: hidden;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:#121212;color:#eee;
+  overflow-x:hidden;
+}
+.lang-switch {
+  position:fixed;top:10px;right:10px;z-index:10;
+}
+.lang-switch button {
+  background:#333;color:#ccc;border:none;padding:5px 10px; margin-left:5px;
+  cursor:pointer;border-radius:4px;
+}
+.lang-switch button.active {
+  background:#4ae;color:#121212;
 }
 
-/* Hero section */
-.hero {
-  position: relative;
-  height: 60vh;
-  background: url('assets/shot1.png') center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.overlay {
-  position: absolute; inset: 0;
-  background: rgba(0,0,0,0.6);
-}
-.logo {
-  height: 80px;
-  mix-blend-mode: screen;
-  margin-bottom: 20px;
-}
-.hero-desc {
-  max-width: 600px;
-  text-align: center;
-  z-index: 1;
-  font-size: 1.1rem;
-}
-
-/* Glitch animations */
-@keyframes glitch {
-  0% {transform: none;}
-  20% {transform: skew(0.5deg) translate(2px);clip-path: inset(40% 0 45% 0);}
-  40% {transform: skew(-0.5deg) translate(-2px);clip-path: inset(30% 0 54% 0);}
-  60% {transform: skew(0.5deg) translate(2px);clip-path: inset(50% 0 30% 0);}
-  80% {transform: skew(-0.5deg) translate(-2px);clip-path: inset(20% 0 65% 0);}
-  100% {transform: none;clip-path: inset(0);}
-}
-.glitch-text, .glitch {
-  position: relative;
-  animation: glitch 2s infinite;
-}
+/* Hero */
+.hero {position:relative;height:60vh;background:url('assets/shot1.png') center/cover no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);}
+.logo{height:80px;mix-blend-mode:screen;margin-bottom:20px;animation:glitch 2s infinite;}
+h1, .hero-desc {z-index:1;text-align:center;}
+.hero-desc{max-width:600px;font-size:1.1rem;margin-top:10px;}
+@keyframes glitch{0%,100%{transform:none;}20%{transform:skew(.5deg) translate(2px);clip-path:inset(40% 0 45% 0);}40%{transform:skew(-.5deg) translate(-2px);clip-path:inset(30% 0 54% 0);}60%{transform:skew(.5deg) translate(2px);clip-path:inset(50% 0 30% 0);}80%{transform:skew(-.5deg) translate(-2px);clip-path:inset(20% 0 65% 0);}}
 
 /* Slider */
-.screenshots {
-  padding: 40px 20px;
-  background: #181818;
-  text-align: center;
-}
-.slider {
-  display: flex;
-  overflow: hidden;
-  width: 90%;
-  margin: 20px auto;
-}
-.slide {
-  min-width: 100%;
-  transition: 0.5s;
-  flex-shrink: 0;
-}
-.slide img {
-  width: 100%;
-  border: 4px solid #333;
-}
+.screenshots{padding:40px 20px;background:#181818;text-align:center;}
+.slider{position:relative;display:flex;overflow:hidden;width:90%;max-width:400px;margin:20px auto;transition:transform .5s;}
+.slide{min-width:100%;}
+.slide img{width:100%;border:2px solid #333;border-radius:8px;}
+.dots{position:relative;margin-top:10px;}
+.dot{display:inline-block;width:10px;height:10px;background:#555;border-radius:50%;margin:0 5px;cursor:pointer;}
+.dot.active{background:#4ae;}
 
-/* Slider auto scroll */
-@keyframes slideAnim {
-  0%, 33% {transform: translateX(0);}
-  34%, 66% {transform: translateX(-100%);}
-  67%, 99% {transform: translateX(-200%);}
-}
-.slider {
-  animation: slideAnim 12s infinite;
-}
+/* Description */
+.description{padding:40px 20px;background:#121212;text-align:center;}
+.description ul{list-style:none;max-width:600px;margin:0 auto;font-size:1.1rem;line-height:1.6;}
+.description li{margin-bottom:10px;}
 
-/* Description block */
-.description {
-  padding: 40px 20px;
-  background: #121212;
-  text-align: center;
-}
-.description ul {
-  list-style: none;
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-.description li {
-  margin-bottom: 10px;
-  position: relative;
-}
-
-/* Policy and contacts */
-section.policy, section.contacts {
-  padding: 30px 20px;
-  background: #181818;
-  text-align: center;
-}
-a {
-  color: #4AE;
-}
-footer {
-  padding: 20px;
-  text-align: center;
-  background: #0D0D0D;
-  font-size: 0.9rem;
-}
+/* Policy & Contacts */
+section.policy, section.contacts{padding:30px 20px;background:#181818;text-align:center;}
+a{color:#4ae;text-decoration:none;}
+footer{padding:20px;text-align:center;background:#0d0d0d;font-size:0.9rem;}
