@@ -3,92 +3,175 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>SPOKO PARK</title>
+  <title>SPOKO PARK Landing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="lang-switch">
-    <button id="en-btn" class="active">EN</button>
-    <button id="pl-btn">PL</button>
+
+<header id="top" class="header">
+  <div class="container header-inner">
+    <nav>
+      <button class="nav-btn active" data-target="top">Home</button>
+      <button class="nav-btn" data-target="features">Features</button>
+      <button class="nav-btn" data-target="how-it-works">How It Works</button>
+      <button class="nav-btn" data-target="demo-slider">Demo</button>
+      <button class="nav-btn" data-target="contacts">Contacts</button>
+    </nav>
+    <div class="lang-switch">
+      <button id="en-btn" class="active">EN</button>
+      <button id="pl-btn">PL</button>
+    </div>
   </div>
+</header>
 
-  <header class="hero">
-    <div class="bg-text glitch-bg">SPOKO PARK</div>
-    <img src="assets/spoko_park_logo.png" alt="Logo" class="logo"/>
-    <h1 data-en="Find and park in seconds" data-pl="Znajdź i zaparkuj w kilka sekund">Find and park in seconds</h1>
-    <p data-en="Smart parking app — fast, simple, secure!" data-pl="Intuicyjna aplikacja do parkowania — szybko, prosto, bezpiecznie!">
-      Smart parking app — fast, simple, secure!
+<section id="main" class="main-block full-height">
+  <div class="back-text">SPOKO PARK</div>
+  <div class="container flex center">
+    <div class="main-content">
+      <h1>SPOKO PARK</h1>
+      <p data-en="Find & Pay Parking in Seconds" data-pl="Znajdź i zapłać za parking w sekundach">Find & Pay Parking in Seconds</p>
+      <div class="store-links">
+        <a href="#"><img src="assets/stores/appstore.png" alt="App Store"/></a>
+        <a href="#"><img src="assets/stores/googleplay.png" alt="Google Play"/></a>
+      </div>
+    </div>
+    <div class="mockup-gallery">
+      <img src="assets/mockups/mockup.png" alt="App mockup" class="mockup-single">
+    </div>
+  </div>
+</section>
+
+<!-- Добавленный блок FEATURES -->
+<section id="features" class="features-block">
+  <div class="container">
+    <h2 data-en="Features" data-pl="Funkcje">Features</h2>
+    <div class="features-list">
+      <div class="feature-card">
+        <img src="assets/icons/car_tag.svg" alt="Pay on Spot" class="feature-icon" />
+        <h3 data-en="Pay on Spot" data-pl="Płać na miejscu">Pay on Spot</h3>
+        <p data-en="No app registration required. Just scan and pay!" data-pl="Bez rejestracji. Skanuj i płać!">
+          No app registration required. Just scan and pay!
+        </p>
+      </div>
+      <div class="feature-card">
+        <img src="assets/icons/qr_code_scanner.svg" alt="QR Code Access" class="feature-icon" />
+        <h3 data-en="Use QR Codes" data-pl="Użyj kodów QR">Use QR Codes</h3>
+        <p data-en="Quick access to parking via smart QR codes." data-pl="Szybki dostęp dzięki kodom QR.">
+          Quick access to parking via smart QR codes.
+        </p>
+      </div>
+      <div class="feature-card">
+        <img src="assets/icons/parking_sign.svg" alt="Track Parkings" class="feature-icon" />
+        <h3 data-en="Track Your Parkings" data-pl="Śledź swoje parkingi">Track Your Parkings</h3>
+        <p data-en="Stay informed with detailed parking history and duration." data-pl="Historia i czas parkowania zawsze pod ręką.">
+          Stay informed with detailed parking history and duration.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-block">
+  <h2>How it works</h2>
+  <div class="steps">
+
+    <div class="step step-odd">
+      <img src="assets/screenshot1.png" alt="Step 1" />
+      <div class="step-text">
+        <div class="step-number">Step 1</div>
+        <h3>Title 1</h3>
+        <p>Short description here</p>
+      </div>
+    </div>
+
+    <div class="step step-even">
+      <img src="assets/screenshot2.png" alt="Step 2" />
+      <div class="step-text">
+        <div class="step-number">Step 2</div>
+        <h3>Title 2</h3>
+        <p>Short description here</p>
+      </div>
+    </div>
+
+    <div class="step step-odd">
+      <img src="assets/screenshot3.png" alt="Step 3" />
+      <div class="step-text">
+        <div class="step-number">Step 3</div>
+        <h3>Title 3</h3>
+        <p>Short description here</p>
+      </div>
+    </div>
+
+    <div class="step step-even">
+      <img src="assets/screenshot4.png" alt="Step 4" />
+      <div class="step-text">
+        <div class="step-number">Step 4</div>
+        <h3>Title 4</h3>
+        <p>Short description here</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="demo-slider" class="slider-block">
+  <div class="container">
+    <h2 data-en="Demo" data-pl="Demo">Demo</h2>
+    <div class="slider-wrapper">
+      <div class="slider-track-wrapper">
+        <div class="slider-track">
+          <div class="slide"><img src="assets/screenshot1.png" alt="Slide 1"/></div>
+          <div class="slide"><img src="assets/screenshot2.png" alt="Slide 2"/></div>
+          <div class="slide"><img src="assets/screenshot3.png" alt="Slide 3"/></div>
+          <div class="slide"><img src="assets/screenshot4.png" alt="Slide 4"/></div>
+          <div class="slide"><img src="assets/screenshot5.png" alt="Slide 5"/></div>
+          <div class="slide"><img src="assets/screenshot6.png" alt="Slide 6"/></div>
+          <div class="slide"><img src="assets/screenshot7.png" alt="Slide 7"/></div>
+          <div class="slide"><img src="assets/screenshot8.png" alt="Slide 8"/></div>
+          <div class="slide"><img src="assets/screenshot9.png" alt="Slide 9"/></div>
+        </div>
+      </div>
+      <div class="dots">
+        <button id="prev" aria-label="Previous slide">&#10094;</button>
+        <button id="next" aria-label="Next slide">&#10095;</button>
+      </div>
+      <div class="dots" role="tablist" aria-label="Slide navigation"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" class="contacts-block">
+  <div class="container">
+    <h2 data-en="Contacts & Policy" data-pl="Kontakt i polityka">Contacts & Policy</h2>
+
+    <p data-en="Email us at" data-pl="Napisz do nas na">
+      Email us at <a href="mailto:example@mail.com">example@mail.com</a>
     </p>
-  </header>
 
-  <section class="slider-section">
-    <h2 data-en="App Overview" data-pl="Przegląd aplikacji">App Overview</h2>
-    <div class="slider">
-      <div class="slide">
-        <img src="assets/screenshot1.png" alt="App Mockup 1"/>
-      </div>
-      <div class="slide">
-        <img src="assets/screenshot2.png" alt="App Mockup 2"/>
-      </div>
-      <div class="slide">
-        <img src="assets/screenshot3.png" alt="App Mockup 3"/>
-      </div>
-    </div>
-    <div class="dots"></div>
-  </section>
-
-  <section class="qr-animation">
-    <h2 data-en="How it works" data-pl="Jak to działa">How it works</h2>
-    <div class="qr-container">
-      <div class="phone">
-        <div class="qr-screen"></div>
-      </div>
-      <div class="scan-lines"></div>
-      <p data-en="Scan QR to unlock parking spot" data-pl="Zeskanuj QR, aby odblokować miejsce parkingowe">
-        Scan QR to unlock parking spot
-      </p>
-    </div>
-  </section>
-
-  <section class="description">
-    <h2 data-en="Why SPOKO PARK?" data-pl="Dlaczego SPOKO PARK?">Why SPOKO PARK?</h2>
-    <ul>
-      <li data-en="🔒 Auto-reserve nearby spot" data-pl="🔒 Automatyczna rezerwacja miejsca">🔒 Auto-reserve nearby spot</li>
-      <li data-en="💳 In-app payment" data-pl="💳 Płatność w aplikacji">💳 In-app payment</li>
-      <li data-en="📍 GPS guidance" data-pl="📍 Nawigacja GPS">📍 GPS guidance</li>
-      <li data-en="⏱️ Easy start & go" data-pl="⏱️ Proste rozpoczęcie">⏱️ Easy start & go</li>
-    </ul>
-  </section>
-
-  <section class="downloads">
-    <h2 data-en="Download the App" data-pl="Pobierz aplikację">Download the App</h2>
-    <div class="store-buttons">
-      <a href="#" class="appstore">App Store</a>
-      <a href="#" class="googleplay">Google Play</a>
-    </div>
-  </section>
-
-  <section class="policy">
-    <h2 data-en="Privacy Policy" data-pl="Polityka prywatności">Privacy Policy</h2>
-    <p><a href="#!" data-en="View policy" data-pl="Zobacz dokument">View policy</a></p>
-    <p data-en="To delete your account data, please contact:" data-pl="Aby usunąć dane konta, skontaktuj się:">
-      To delete your account data, please contact:
+    <p data-en="To delete your account data, contact us." data-pl="Aby usunąć dane konta, skontaktuj się z nami.">
+      To delete your account data, contact us.
     </p>
-    <p class="contact-email"><a href="mailto:example@mail.com">example@mail.com</a></p>
-  </section>
 
-  <section class="contacts">
-    <h2 data-en="Contact Us Today!" data-pl="Skontaktuj się dziś!">Contact Us Today!</h2>
-    <p class="contact-email"><a href="mailto:example@mail.com">example@mail.com</a></p>
-    <p data-en="Phone: +7 (999) 123‑45‑67" data-pl="Telefon: +7 (999) 123‑45‑67">Phone: +7 (999) 123‑45‑67</p>
-  </section>
+    <p data-en="Privacy Policy" data-pl="Polityka prywatności">
+      <a href="https://example.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+    </p>
 
-  <footer>
-    <p data-en="© 2025 SPOKO PARK. All rights reserved." data-pl="© 2025 SPOKO PARK. Wszelkie prawa zastrzeżone.">
+    <div class="store-links" style="margin-top: 20px;">
+      <a href="#" aria-label="App Store">
+        <img src="assets/stores/appstore.png" alt="App Store" />
+      </a>
+      <a href="#" aria-label="Google Play">
+        <img src="assets/stores/googleplay.png" alt="Google Play" />
+      </a>
+    </div>
+
+    <p style="margin-top: 30px; font-size: 0.9em; color: #888;" data-en="© 2025 SPOKO PARK. All rights reserved." data-pl="© 2025 SPOKO PARK. Wszelkie prawa zastrzeżone.">
       © 2025 SPOKO PARK. All rights reserved.
     </p>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

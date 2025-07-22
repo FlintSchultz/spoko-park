@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>[App Name] — Landing Page</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
+    /* Container */
+    .container { max-width: 1200px; margin: auto; padding: 20px; }
+    section { padding: 80px 0; }
+
+    /* Hero */
+    .hero {
+      display: flex; align-items: center; justify-content: space-between;
+      background: linear-gradient(135deg, #4a90e2, #9013fe);
+      color: white; border-radius: 8px; overflow: hidden;
+    }
+    .hero .hero-text { flex: 1; padding: 40px; }
+    .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+    .hero .btn {
+      background: #fff; color: #4a90e2;
+      padding: 15px 30px; border-radius: 6px;
+      text-decoration: none; font-weight: bold;
+      transition: transform .3s;
+    }
+    .hero .btn:hover { transform: translateY(-2px); }
+    .hero img { max-width: 400px; }
+
+    /* Features */
+    .features { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .feature {
+      background: #f9f9f9; border-radius: 8px;
+      padding: 30px; flex: 1; min-width: 260px;
+      text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,.05);
+    }
+    .feature img { width: 60px; margin-bottom: 15px; }
+    .feature h3 { margin-bottom: 15px; }
+    .feature p { font-size: .95rem; color: #555; }
+
+    /* Download */
+    .download { text-align: center; }
+    .download .store-links img {
+      width: 160px; margin: 0 10px;
+      transition: transform .2s;
+    }
+    .download .store-links img:hover { transform: scale(1.05); }
+
+    /* Footer */
+    footer {
+      background: #222; color: white;
+      text-align: center; padding: 20px 0;
+      font-size: .85rem;
+    }
+    footer a { color: #4a90e2; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero container">
+    <div class="hero-text">
+      <h1>[App Name]</h1>
+      <p>Short catchphrase describing the app — fast, simple, and secure.</p>
+      <a href="#" class="btn">Download Now</a>
+    </div>
+    <img src="assets/hero-mockup.png" alt="App mockup">
+  </section>
+
+  <!-- FEATURES -->
+  <section class="container features">
+    <div class="feature">
+      <img src="assets/icon1.png" alt="Icon 1">
+      <h3>Feature One</h3>
+      <p>Explain feature benefit clearly and concisely to the visitor.</p>
+    </div>
+    <div class="feature">
+      <img src="assets/icon2.png" alt="Icon 2">
+      <h3>Feature Two</h3>
+      <p>Another feature highlight that reflects user value.</p>
+    </div>
+    <div class="feature">
+      <img src="assets/icon3.png" alt="Icon 3">
+      <h3>Feature Three</h3>
+      <p>Explain why this feature is great for your audience.</p>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD APPS -->
+  <section class="container download">
+    <h2>Get the App</h2>
+    <div class="store-links">
+      <a href="#"><img src="assets/appstore.png" alt="App Store"></a>
+      <a href="#"><img src="assets/googleplay.png" alt="Google Play"></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 [App Name]. All rights reserved.</p>
+    <p><a href="mailto:privacy@[your-domain].com">Contact & Privacy</a></p>
+  </footer>
+
+</body>
+</html>
