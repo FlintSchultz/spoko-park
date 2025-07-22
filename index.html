@@ -1,108 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>SPOKO PARK</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div class="lang-switch">
     <button id="en-btn" class="active">EN</button>
-    <button id="ru-btn">RU</button>
+    <button id="pl-btn">PL</button>
   </div>
 
   <header class="hero">
-    <div class="overlay"></div>
-    <img src="assets/spoko_park_logo.png" alt="Logo" class="logo glitch" />
-    <h1 class="glitch-text" data-en="Welcome to SPOKO PARK" data-ru="Добро пожаловать в SPOKO PARK">Welcome to SPOKO PARK</h1>
-    <p class="hero-desc" data-en="Smart parking app — fast, simple, secure!"
-       data-ru="Умное приложение для парковки — быстро, просто, безопасно.">
-       Smart parking app — fast, simple, secure!
+    <div class="bg-text glitch-bg">SPOKO PARK</div>
+    <img src="assets/spoko_park_logo.png" alt="Logo" class="logo"/>
+    <h1 data-en="Find and park in seconds" data-pl="Znajdź i zaparkuj w kilka sekund">Find and park in seconds</h1>
+    <p data-en="Smart parking app — fast, simple, secure!" data-pl="Intuicyjna aplikacja do parkowania — szybko, prosto, bezpiecznie!">
+      Smart parking app — fast, simple, secure!
     </p>
   </header>
 
-  <section class="screenshots">
-    <h2 data-en="Screenshots" data-ru="Скриншоты">Screenshots</h2>
+  <section class="slider-section">
+    <h2 data-en="App Overview" data-pl="Przegląd aplikacji">App Overview</h2>
     <div class="slider">
-      <div class="slide"><img src="assets/screenshot1.png" alt="" /></div>
-      <div class="slide"><img src="assets/screenshot2.png" alt="" /></div>
-      <div class="slide"><img src="assets/screenshot3.png" alt="" /></div>
-      <div class="slide"><img src="assets/screenshot4.png" alt="" /></div>
-      <div class="slide"><img src="assets/screenshot5.png" alt="" /></div>
-      <div class="slide"><img src="assets/screenshot6.png" alt="" /></div>
-      <div class="slide"><img src="assets/screenshot7.png" alt="" /></div>
-      <div class="slide"><img src="assets/screenshot8.png" alt="" /></div>
-      <div class="dots"></div>
+      <div class="slide">
+        <img src="assets/screenshot1.png" alt="App Mockup 1"/>
+      </div>
+      <div class="slide">
+        <img src="assets/screenshot2.png" alt="App Mockup 2"/>
+      </div>
+      <div class="slide">
+        <img src="assets/screenshot3.png" alt="App Mockup 3"/>
+      </div>
+    </div>
+    <div class="dots"></div>
+  </section>
+
+  <section class="qr-animation">
+    <h2 data-en="How it works" data-pl="Jak to działa">How it works</h2>
+    <div class="qr-container">
+      <div class="phone">
+        <div class="qr-screen"></div>
+      </div>
+      <div class="scan-lines"></div>
+      <p data-en="Scan QR to unlock parking spot" data-pl="Zeskanuj QR, aby odblokować miejsce parkingowe">
+        Scan QR to unlock parking spot
+      </p>
     </div>
   </section>
 
   <section class="description">
-    <h2 data-en="Why SPOKO PARK?" data-ru="Почему SPOKO PARK?">Why SPOKO PARK?</h2>
+    <h2 data-en="Why SPOKO PARK?" data-pl="Dlaczego SPOKO PARK?">Why SPOKO PARK?</h2>
     <ul>
-      <li data-en="🔒 Auto-reserve parking nearby" data-ru="🔒 Автоматическое бронирование парковки рядом">🔒 Auto-reserve parking nearby</li>
-      <li data-en="💳 Pay within the app" data-ru="💳 Оплата прямо в приложении">💳 Pay within the app</li>
-      <li data-en="🧭 Navigate to your spot" data-ru="🧭 Навигация до места">🧭 Navigate to your spot</li>
-      <li data-en="⚡ Modern glitch UI for cool vibe" data-ru="⚡ Современный глитч-дизайн для стиля">⚡ Modern glitch UI for cool vibe</li>
+      <li data-en="🔒 Auto-reserve nearby spot" data-pl="🔒 Automatyczna rezerwacja miejsca">🔒 Auto-reserve nearby spot</li>
+      <li data-en="💳 In-app payment" data-pl="💳 Płatność w aplikacji">💳 In-app payment</li>
+      <li data-en="📍 GPS guidance" data-pl="📍 Nawigacja GPS">📍 GPS guidance</li>
+      <li data-en="⏱️ Easy start & go" data-pl="⏱️ Proste rozpoczęcie">⏱️ Easy start & go</li>
     </ul>
   </section>
 
+  <section class="downloads">
+    <h2 data-en="Download the App" data-pl="Pobierz aplikację">Download the App</h2>
+    <div class="store-buttons">
+      <a href="#" class="appstore">App Store</a>
+      <a href="#" class="googleplay">Google Play</a>
+    </div>
+  </section>
+
   <section class="policy">
-    <h2 data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</h2>
-    <p><a href="#!" data-en="Link to document" data-ru="Ссылка на документ">Link to document</a></p>
+    <h2 data-en="Privacy Policy" data-pl="Polityka prywatności">Privacy Policy</h2>
+    <p><a href="#!" data-en="View policy" data-pl="Zobacz dokument">View policy</a></p>
+    <p data-en="To delete your account data, please contact:" data-pl="Aby usunąć dane konta, skontaktuj się:">
+      To delete your account data, please contact:
+    </p>
+    <p class="contact-email"><a href="mailto:example@mail.com">example@mail.com</a></p>
   </section>
 
   <section class="contacts">
-    <h2 data-en="Contacts" data-ru="Контакты">Contacts</h2>
-    <p data-en="Email: example@mail.com" data-ru="Email: example@mail.com">Email: example@mail.com</p>
-    <p data-en="Phone: +7 (999) 123‑45‑67" data-ru="Телефон: +7 (999) 123‑45‑67">Phone: +7 (999) 123‑45‑67</p>
+    <h2 data-en="Contact Us Today!" data-pl="Skontaktuj się dziś!">Contact Us Today!</h2>
+    <p class="contact-email"><a href="mailto:example@mail.com">example@mail.com</a></p>
+    <p data-en="Phone: +7 (999) 123‑45‑67" data-pl="Telefon: +7 (999) 123‑45‑67">Phone: +7 (999) 123‑45‑67</p>
   </section>
 
   <footer>
-    <p data-en="© 2025 SPOKO PARK. All rights reserved."
-       data-ru="© 2025 SPOKO PARK. Все права защищены.">
-       © 2025 SPOKO PARK. All rights reserved.
+    <p data-en="© 2025 SPOKO PARK. All rights reserved." data-pl="© 2025 SPOKO PARK. Wszelkie prawa zastrzeżone.">
+      © 2025 SPOKO PARK. All rights reserved.
     </p>
   </footer>
 
-  <script>
-    // Language switcher
-    const enBtn = document.getElementById('en-btn'), ruBtn = document.getElementById('ru-btn');
-    enBtn.onclick = () => switchLang('en');
-    ruBtn.onclick = () => switchLang('ru');
-    function switchLang(lang) {
-      document.querySelectorAll('[data-en]').forEach(el => {
-        el.textContent = el.dataset[lang];
-      });
-      enBtn.classList.toggle('active', lang === 'en');
-      ruBtn.classList.toggle('active', lang === 'ru');
-    }
-
-    // Slider logic
-    const slider = document.querySelector('.slider'),
-          slides = document.querySelectorAll('.slide'),
-          dotsContainer = document.querySelector('.dots');
-    let current = 0;
-    slides.forEach((_, i) => {
-      const d = document.createElement('span');
-      d.className = 'dot';
-      d.addEventListener('click', () => goToSlide(i));
-      dotsContainer.appendChild(d);
-    });
-    const dots = document.querySelectorAll('.dot');
-    function goToSlide(n) {
-      current = n;
-      slider.style.transform = `translateX(-${100 * current}%)`;
-      updateDots();
-    }
-    function updateDots() {
-      dots.forEach((d,i)=> d.classList.toggle('active', i === current));
-    }
-    function nextSlide() {
-      goToSlide((current + 1) % slides.length);
-    }
-    updateDots();
-    setInterval(nextSlide, 4000);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
