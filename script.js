@@ -38,6 +38,12 @@ function switchLang(lang) {
   btnPl.classList.toggle('active', lang==='pl'); 
 }
 
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
+burger.addEventListener('click', () => {
+  nav.classList.toggle('open');
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   // Инициализируем язык по умолчанию
   const initialLang = document.documentElement.lang || 'en';
@@ -64,10 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Слайдер
 const swiper = new Swiper('.mySwiper', {
-  slidesPerView: 3,
   centeredSlides: true,
   loop: true,
-  spaceBetween: 30,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
@@ -76,6 +80,16 @@ const swiper = new Swiper('.mySwiper', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  breakpoints: {
+    768: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    }
+  }
 });
 
 // Навигация по якорям

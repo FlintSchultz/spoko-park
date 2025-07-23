@@ -55,6 +55,7 @@ body::before {
   top: 0;
   z-index: 1000;
 }
+
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -62,6 +63,73 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.burger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+/* Мобильный стиль */
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 6px 12px; 
+    align-items: center;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  nav.nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  nav.nav.open {
+    display: flex;
+  }
+
+  nav .nav-btn {
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px;
+  }
+
+  .lang-switch {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    height: 40px;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+  }
+
+  .nav.show {
+    display: flex;
+  }
 }
 
 /* Material 3 кнопки */
@@ -95,6 +163,7 @@ nav .nav-btn.active {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
+
 .lang-switch .active {
   background-color: #006FFD;
   color: #fff;
@@ -126,6 +195,74 @@ nav .nav-btn.active {
   mix-blend-mode: overlay;
   pointer-events: none;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .flex.center {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding-top: 120px; /* учитываем шапку */
+    gap: 24px;
+  }
+
+  .main-content {
+    max-width: 100%;
+    margin-bottom: 32px;
+    order: 1;
+  }
+
+  .main-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .main-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  .store-links {
+    margin-bottom: 10px;
+  }
+
+  .mockup-gallery {
+    margin-top: 12px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mockup-single {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .back-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 2rem;
+    filter: blur(1.5px);
+    opacity: 0.07;
+    white-space: nowrap;
+    z-index: 1;
+  }
+
+  .title-with-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 2.7rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .logo-inline {
+    height: 4rem;
+  }
 }
 
 @keyframes bgShift {
@@ -385,20 +522,49 @@ nav .nav-btn.active {
   white-space: nowrap;
 }
 
-/* Адаптация */
 @media (max-width: 768px) {
-  .step {
-    flex-direction: column !important;
+  .step,
+  .step-even,
+  .step-odd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
+  
+  .step:not(:first-child) {
+    margin-top: -100px; 
+  }
 
-  .step-even, .step-odd {
-    flex-direction: column !important;
+  .step img {
+    order: 2;
+    width: 80%;
+    max-width: 90%;
+    margin: 20px 0 0;
   }
 
   .step-text {
-    max-width: 100%;
-    align-items: center;
+    order: 1;
+    max-width: 90%;
+    margin: 20px 0 0;
+    text-align: center !important;
+  }
+
+  .qr-mock {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .caption {
+    font-size: 1.2rem;
+  }
+
+  .step-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .step-text p {
+    font-size: 0.95rem;
   }
 }
 
@@ -470,6 +636,7 @@ nav .nav-btn.active {
   display: block;
   margin: 0 auto;
 }
+
 .swiper-button-prev,
 .swiper-button-next {
   top: 50%;
@@ -506,6 +673,18 @@ nav .nav-btn.active {
 .swiper-button-next {
   right: clamp(10px, 2vw, 20px);
   z-index: 20;
+}
+
+@media (max-width: 768px) {
+  .swiper-slide img {
+    max-width: 100%;
+    max-height: 50vh;
+    border-radius: 12px;
+  }
+
+  .swiper-slide-active {
+    transform: scale(1.05); /* Уменьшаем масштаб на мобильных */
+  }
 }
 
 .material-icons-outlined {
