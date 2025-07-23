@@ -6,17 +6,22 @@
   <title>SPOKO PARK Landing</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css"/>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 </head>
 <body>
 
 <header id="top" class="header">
   <div class="container header-inner">
     <nav>
-      <button class="nav-btn active" data-target="top">Home</button>
-      <button class="nav-btn" data-target="features">Features</button>
-      <button class="nav-btn" data-target="how-it-works">How It Works</button>
-      <button class="nav-btn" data-target="demo-slider">Demo</button>
-      <button class="nav-btn" data-target="contacts">Contacts</button>
+      <button class="nav-btn active" data-target="main" data-en="Home" data-pl="Start">Home</button>
+      <button class="nav-btn" data-target="features" data-en="Features" data-pl="Funkcje">Features</button>
+      <button class="nav-btn" data-target="how-it-works" data-en="How It Works" data-pl="Jak to działa">How It Works</button>
+      <button class="nav-btn" data-target="demo-slider" data-en="Demo" data-pl="Demo">Demo</button>
+      <button class="nav-btn" data-target="contacts" data-en="Contacts" data-pl="Kontakt">Contacts</button>
     </nav>
     <div class="lang-switch">
       <button id="en-btn" class="active">EN</button>
@@ -29,7 +34,10 @@
   <div class="back-text">SPOKO PARK</div>
   <div class="container flex center">
     <div class="main-content">
-      <h1>SPOKO PARK</h1>
+       <h1 class="title-with-logo">
+        SPOKO PARK
+        <img src="assets/spoko_park_logo.png" alt="Logo" class="logo-inline" />
+      </h1>
       <p data-en="Find & Pay Parking in Seconds" data-pl="Znajdź i zapłać za parking w sekundach">Find & Pay Parking in Seconds</p>
       <div class="store-links">
         <a href="#"><img src="assets/stores/appstore.png" alt="App Store"/></a>
@@ -72,71 +80,90 @@
   </div>
 </section>
 
-<section class="how-block">
-  <h2>How it works</h2>
+<section id="how-it-works" class="how-block">
+  <h2 data-en="How it works" data-pl="Jak to działa">How it works</h2>
   <div class="steps">
 
     <div class="step step-odd">
       <img src="assets/screenshot1.png" alt="Step 1" />
       <div class="step-text">
-        <div class="step-number">Step 1</div>
-        <h3>Title 1</h3>
-        <p>Short description here</p>
+        <div class="step-number" data-en="Step 1" data-pl="Krok 1">Step 1</div>
+        <h3 data-en="Join us!" data-pl="Dołącz do nas!">Join us!</h3>
+        <p
+          data-en="Scan QR code to text the driver. Be polite. Verify the necessary documents."
+          data-pl="Zeskanuj kod QR, aby napisać do kierowcy. Bądź uprzejmy. Zweryfikuj wymagane dokumenty.">
+          Scan QR code to text the driver. Be polite. Verify the necessary documents.
+        </p>
       </div>
     </div>
 
     <div class="step step-even">
       <img src="assets/screenshot2.png" alt="Step 2" />
       <div class="step-text">
-        <div class="step-number">Step 2</div>
-        <h3>Title 2</h3>
-        <p>Short description here</p>
+        <div class="step-number" data-en="Step 2" data-pl="Krok 2">Step 2</div>
+        <h3 data-en="Transport & QR" data-pl="Transport i QR">Transport & QR</h3>
+        <p
+          data-en="Add and link your vehicle with your own QR code."
+          data-pl="Dodaj i powiąż swój pojazd z własnym kodem QR.">
+          Add and link your vehicle with your own QR code.
+        </p>
       </div>
     </div>
 
     <div class="step step-odd">
       <img src="assets/screenshot3.png" alt="Step 3" />
       <div class="step-text">
-        <div class="step-number">Step 3</div>
-        <h3>Title 3</h3>
-        <p>Short description here</p>
+        <div class="step-number" data-en="Step 3" data-pl="Krok 3">Step 3</div>
+        <h3 data-en="Push notifications!" data-pl="Powiadomienia push!">Push notifications!</h3>
+        <p
+          data-en="Get real-time updates about your car status, parking and payments."
+          data-pl="Otrzymuj powiadomienia w czasie rzeczywistym o statusie pojazdu, parkingach i płatnościach.">
+          Get real-time updates about your car status, parking and payments.
+        </p>
       </div>
     </div>
 
     <div class="step step-even">
       <img src="assets/screenshot4.png" alt="Step 4" />
       <div class="step-text">
-        <div class="step-number">Step 4</div>
-        <h3>Title 4</h3>
-        <p>Short description here</p>
+        <div class="step-number" data-en="Step 4" data-pl="Krok 4">Step 4</div>
+        <h3 data-en="Parking map" data-pl="Mapa parkingów">Parking map</h3>
+        <p
+          data-en="Track available parking spots on the map."
+          data-pl="Śledź dostępne miejsca parkingowe na mapie.">
+          Track available parking spots on the map.
+        </p>
       </div>
     </div>
 
   </div>
 </section>
 
-<section id="demo-slider" class="slider-block">
+<section class="slider-block">
   <div class="container">
-    <h2 data-en="Demo" data-pl="Demo">Demo</h2>
-    <div class="slider-wrapper">
-      <div class="slider-track-wrapper">
-        <div class="slider-track">
-          <div class="slide"><img src="assets/screenshot1.png" alt="Slide 1"/></div>
-          <div class="slide"><img src="assets/screenshot2.png" alt="Slide 2"/></div>
-          <div class="slide"><img src="assets/screenshot3.png" alt="Slide 3"/></div>
-          <div class="slide"><img src="assets/screenshot4.png" alt="Slide 4"/></div>
-          <div class="slide"><img src="assets/screenshot5.png" alt="Slide 5"/></div>
-          <div class="slide"><img src="assets/screenshot6.png" alt="Slide 6"/></div>
-          <div class="slide"><img src="assets/screenshot7.png" alt="Slide 7"/></div>
-          <div class="slide"><img src="assets/screenshot8.png" alt="Slide 8"/></div>
-          <div class="slide"><img src="assets/screenshot9.png" alt="Slide 9"/></div>
-        </div>
+    <h2>Demo</h2>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="assets/screenshot1.png" alt="Slide 1"/></div>
+        <div class="swiper-slide"><img src="assets/screenshot2.png" alt="Slide 2"/></div>
+        <div class="swiper-slide"><img src="assets/screenshot3.png" alt="Slide 3"/></div>
+        <div class="swiper-slide"><img src="assets/screenshot4.png" alt="Slide 4"/></div>
+        <div class="swiper-slide"><img src="assets/screenshot5.png" alt="Slide 5"/></div>
+        <div class="swiper-slide"><img src="assets/screenshot6.png" alt="Slide 6"/></div>
+        <div class="swiper-slide"><img src="assets/screenshot7.png" alt="Slide 7"/></div>
+        <div class="swiper-slide"><img src="assets/screenshot8.png" alt="Slide 8"/></div>
+        <div class="swiper-slide"><img src="assets/screenshot9.png" alt="Slide 9"/></div>
       </div>
-      <div class="dots">
-        <button id="prev" aria-label="Previous slide">&#10094;</button>
-        <button id="next" aria-label="Next slide">&#10095;</button>
+
+      <div class="swiper-button-prev material-button">
+        <span class="material-icons-outlined">arrow_back</span>
       </div>
-      <div class="dots" role="tablist" aria-label="Slide navigation"></div>
+      <div class="swiper-button-next material-button">
+        <span class="material-icons-outlined">arrow_forward</span>
+      </div>
+
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </section>
@@ -172,6 +199,8 @@
   </div>
 </section>
 
-<script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+
 </body>
 </html>

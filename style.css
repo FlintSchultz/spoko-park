@@ -29,6 +29,22 @@ body::before {
   z-index: 2;
 }
 
+.title-with-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.logo-inline {
+  height: 1em; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  object-fit: contain;
+  display: inline-block;
+}
+
 /* Шапка */
 .header {
   background-color: #ffffff;
@@ -50,7 +66,7 @@ body::before {
 
 /* Material 3 кнопки */
 nav .nav-btn {
-  background-color: #e8f0fe; /* M3 Tonal */
+  background-color: #e8f0fe; 
   color: #0b57d0;
   border: none;
   border-radius: 20px;
@@ -235,74 +251,85 @@ nav .nav-btn.active {
   transform: scale(1.05);
 }
 .how-block {
-  position: relative;
-  padding: 60px 20px 120px;
-  width: 100%;
-  margin: 0 auto;
-  font-family: 'Poppins', sans-serif;
-  color: #222;
-  background-color: #f0f8ff;
+  padding: 60px 20px;
+  background: white;
+  color: #0c1e3d;
 }
 
 .how-block h2 {
   text-align: center;
-  margin-bottom: 40px;
-  font-weight: 700;
   font-size: 2.5rem;
-  position: relative;
-  z-index: 10;
+  margin-bottom: 60px;
 }
 
 .steps {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.step:not(:first-child) {
-  margin-top: -320px; /* регулируй, чтобы добиться нужного перекрытия */
 }
 
 .step {
   display: flex;
-  align-items: flex-start; /* прижимаем по верхнему краю */
-  border-radius: 16px;
-  padding: 20px;
-  position: relative;
-  z-index: 1;
-  transition: transform 0.3s ease;
-}
-
-/* Нечётные: картинка слева, текст справа */
-.step-odd {
   flex-direction: row;
-  z-index: 2;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
 }
 
-/* Чётные: картинка справа, текст слева */
+.step:not(:first-child) {
+  margin-top: -150px; 
+}
+
 .step-even {
   flex-direction: row-reverse;
-  z-index: 1;
-}
-
-/* Текст занимает около 50-55% ширины, картинка — примерно 40-45% */
-.step-text {
-  max-width: 55%;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* текст прижат к верху */
-  padding: 0 10px;
 }
 
 .step img {
-  width: 36%; 
-  max-width: 324px; 
+  width: 40%;
+  max-width: 360px;
   height: auto;
   border-radius: 12px;
+  object-fit: cover;
+  z-index: 1;  
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   flex-shrink: 0;
+}
+
+.step-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 24px;
+  margin: 0 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #0c1e3d;
+  position: relative;
+  z-index: 2;
+  margin-top: 100px;
+}
+
+.step-number {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #91c9ff;
+}
+
+.step-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.step-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  word-wrap: break-word;
 }
 
 /* Текст выравнивание */
@@ -316,14 +343,14 @@ nav .nav-btn.active {
 
 /* Номер шага с Material3 стилем */
 .step-number {
-  align-self: flex-start; /* чтоб не растягивался по ширине */
+  align-self: flex-start;
   background: rgba(255 255 255 / 0.12);
-  border: 1.5px solid rgba(255 255 255 / 0.3);
+  border: 1.5px solid rgba(26, 68, 222, 0.3);
   border-radius: 24px;
   padding: 6px 18px;
   font-weight: 600;
-  font-size: 14px;
-  color: #fff;
+  font-size: 24px;
+  color: #085dee;
   margin-bottom: 14px;
   user-select: none;
 }
@@ -368,100 +395,101 @@ nav .nav-btn.active {
     max-width: 90%;
   }
 }
+
+.slider-block h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+}
 .slider-block {
   padding: 40px 20px;
-  background: #0d1b3d; /* темно-синий фон */
-  font-family: 'Poppins', sans-serif;
-  user-select: none;
-  position: relative;
+  background: #0d1b3d;
   color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
-.slider-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-direction: column; /* чтобы dots были под слайдером */
+.slider-block h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 700;
 }
 
-.slider-track-wrapper {
-  overflow: hidden;
-  flex: 1;
-  border-radius: 12px;
-  background: transparent; /* убираем фон */
-  box-shadow: none; /* убираем тень */
+.swiper {
   width: 100%;
-}
-
-.slider-track {
-  display: flex;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
-}
-
-.slide {
-  min-width: 100%;
+  padding: 40px 0;
   box-sizing: border-box;
-  padding: 16px;
+  position: relative;
+}
+
+.swiper-slide {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(0.6);
+  transform: scale(1);
+  opacity: 0.6;
+}
+
+.swiper-slide-active {
+  transform: scale(1.5);
+  filter: none;
+  opacity: 1;
+  z-index: 2;
+}
+
+.swiper-slide img {
+  width: auto;
+  height: auto; 
+  max-height: 600px;
+  border-radius: 20px;
+  object-fit: cover; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: -100px; /* Смещаем ниже слайдера */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
+}
+
+/* Дополнительная кастомизация для Material-style кнопок */
+.material-button {
+  background: white;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.slide img {
-  max-width: 130%; /* увеличиваем на 30% */
-  max-height: 520px; /* примерно +30% от 400 */
-  border-radius: 12px;
-  object-fit: contain;
-  user-select: none;
-  /* убираем тень */
-  box-shadow: none;
-}
-
-#prev, #next {
-  background: #e0e0e0;
-  border: none;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   cursor: pointer;
-  margin: 16px 12px 0 12px;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+
+.material-button:hover {
+  background-color: #e0e0e0;
+}
+
+.swiper-button-prev.material-button {
+  left: -28px; /* Отступ влево от слайдера */
+}
+
+.swiper-button-next.material-button {
+  right: -28px; /* Отступ вправо от слайдера */
+}
+
+.material-icons-outlined {
   font-size: 28px;
-  color: #616161;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  transition: background-color 0.3s ease;
-  user-select: none;
-  align-self: center; /* чтобы кнопки не смещались */
-}
-#prev:hover, #next:hover {
-  background: #b3d9ff;
-  color: #0d47a1;
-}
-
-.dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 24px; /* чуть больше отступ сверху */
-  gap: 12px;
-  user-select: none;
-  order: 1; /* чтобы dots были под слайдером */
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  background: #cfd8dc;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-.dot.active {
-  background: #b3d9ff; /* светло-синий цвет для активного */
-  box-shadow: 0 0 8px #b3d9ff;
+  color: #333;
 }
