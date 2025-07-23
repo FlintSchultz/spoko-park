@@ -250,16 +250,49 @@ nav .nav-btn.active {
 .mockup-single:hover {
   transform: scale(1.05);
 }
-.how-block {
+
+.works-block {
+  position: relative;
+  background: #ffffff;
+  color: #222;
   padding: 60px 20px;
-  background: white;
-  color: #0c1e3d;
+  overflow: hidden;
+  z-index: 0;
 }
 
-.how-block h2 {
+.works-block h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.info-block {
+  text-align: center;
+  padding: 60px 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.caption {
+  font-size: 1.8rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #1c76cb, #1c529a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.qr-mock {
+  max-width: 50%;
+  width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .steps {
@@ -287,14 +320,16 @@ nav .nav-btn.active {
 }
 
 .step img {
-  width: 40%;
-  max-width: 360px;
+  width: 35%;
+  max-width: 300px;
   height: auto;
+  min-height: 200px;
   border-radius: 12px;
   object-fit: cover;
-  z-index: 1;  
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   flex-shrink: 0;
+  border: 1.5px solid rgba(26, 68, 222, 0.3);
+  border-radius: 24px;
 }
 
 .step-text {
@@ -305,20 +340,11 @@ nav .nav-btn.active {
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 24px;
   margin: 0 20px;
-  border-radius: 12px;
+  border-radius: 32px;
   backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   color: #0c1e3d;
   position: relative;
-  z-index: 2;
   margin-top: 100px;
-}
-
-.step-number {
-  font-weight: bold;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #91c9ff;
 }
 
 .step-text h3 {
@@ -343,22 +369,20 @@ nav .nav-btn.active {
 
 /* Номер шага с Material3 стилем */
 .step-number {
-  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: rgba(255 255 255 / 0.12);
   border: 1.5px solid rgba(26, 68, 222, 0.3);
   border-radius: 24px;
   padding: 6px 18px;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 1.1rem;
   color: #085dee;
   margin-bottom: 14px;
   user-select: none;
-}
-
-/* Анимация */
-.step.visible {
-  opacity: 1;
-  transform: translateY(0);
+  line-height: 1;
+  white-space: nowrap;
 }
 
 /* Адаптация */
@@ -454,12 +478,9 @@ nav .nav-btn.active {
 }
 
 .swiper-pagination {
-  position: absolute;
-  bottom: -100px; /* Смещаем ниже слайдера */
-  left: 0;
-  width: 100%;
+  position: static;
+  margin-top: 30px;
   text-align: center;
-  z-index: 5;
 }
 
 /* Дополнительная кастомизация для Material-style кнопок */
@@ -477,19 +498,68 @@ nav .nav-btn.active {
   position: absolute;
 }
 
-.material-button:hover {
-  background-color: #e0e0e0;
+.swiper-button-prev {
+  left: clamp(10px, 2vw, 20px);
+  z-index: 20;
 }
 
-.swiper-button-prev.material-button {
-  left: -28px; /* Отступ влево от слайдера */
-}
-
-.swiper-button-next.material-button {
-  right: -28px; /* Отступ вправо от слайдера */
+.swiper-button-next {
+  right: clamp(10px, 2vw, 20px);
+  z-index: 20;
 }
 
 .material-icons-outlined {
   font-size: 28px;
   color: #333;
+}
+
+.contacts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 0;
+}
+
+.contacts-left,
+.contacts-right {
+  flex: 1 1 45%;
+  min-width: 280px;
+}
+
+.contacts-left .title-with-logo {
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contacts-left .logo-inline {
+  height: 32px;
+}
+
+.contacts-left p {
+  margin: 10px 0 20px;
+}
+
+.compact-links img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.contacts-right h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.contacts-right a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .contacts-grid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

@@ -6,6 +6,7 @@
   <title>SPOKO PARK Landing</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -19,7 +20,7 @@
     <nav>
       <button class="nav-btn active" data-target="main" data-en="Home" data-pl="Start">Home</button>
       <button class="nav-btn" data-target="features" data-en="Features" data-pl="Funkcje">Features</button>
-      <button class="nav-btn" data-target="how-it-works" data-en="How It Works" data-pl="Jak to działa">How It Works</button>
+      <button class="nav-btn" data-target="how-works" data-en="How It Works" data-pl="Jak to działa">How It Works</button>
       <button class="nav-btn" data-target="demo-slider" data-en="Demo" data-pl="Demo">Demo</button>
       <button class="nav-btn" data-target="contacts" data-en="Contacts" data-pl="Kontakt">Contacts</button>
     </nav>
@@ -80,14 +81,35 @@
   </div>
 </section>
 
-<section id="how-it-works" class="how-block">
+<section id="how-works" class="works-block">
   <h2 data-en="How it works" data-pl="Jak to działa">How it works</h2>
-  <div class="steps">
+
+    <div class="qr-info-block">
+    <h3 
+      class="caption"
+      data-en="A QR code helps track vehicle status and quickly contact the owner"
+      data-pl="Kod QR pomaga śledzić stan pojazdu i szybko skontaktować się z właścicielem">
+      A QR code helps track vehicle status and quickly contact the owner
+    </h3>
+    <img src="assets/mockups/qr_mock.png" alt="QR mockup" class="qr-mock"/>
+  </div>
+  
+  <div class="sticky-wrapper"></div>
+  
+  <div class="info-block">
+    <h3 
+      class="caption"
+      data-en="The app will help you take care of everything else."
+      data-pl="Aplikacja pomoże Ci zająć się resztą">
+    </h3>
+  </div>
+
+  <div class="container steps">
 
     <div class="step step-odd">
-      <img src="assets/screenshot1.png" alt="Step 1" />
+      <img src="assets/screenshot9.png" alt="Step 1" />
       <div class="step-text">
-        <div class="step-number" data-en="Step 1" data-pl="Krok 1">Step 1</div>
+        <div class="step-number" data-en="1" data-pl="1">1</div>
         <h3 data-en="Join us!" data-pl="Dołącz do nas!">Join us!</h3>
         <p
           data-en="Scan QR code to text the driver. Be polite. Verify the necessary documents."
@@ -100,7 +122,7 @@
     <div class="step step-even">
       <img src="assets/screenshot2.png" alt="Step 2" />
       <div class="step-text">
-        <div class="step-number" data-en="Step 2" data-pl="Krok 2">Step 2</div>
+        <div class="step-number" data-en="2" data-pl="2">2</div>
         <h3 data-en="Transport & QR" data-pl="Transport i QR">Transport & QR</h3>
         <p
           data-en="Add and link your vehicle with your own QR code."
@@ -111,9 +133,9 @@
     </div>
 
     <div class="step step-odd">
-      <img src="assets/screenshot3.png" alt="Step 3" />
+      <img src="assets/screenshot1.png" alt="Step 3" />
       <div class="step-text">
-        <div class="step-number" data-en="Step 3" data-pl="Krok 3">Step 3</div>
+        <div class="step-number" data-en="3" data-pl="3">3</div>
         <h3 data-en="Push notifications!" data-pl="Powiadomienia push!">Push notifications!</h3>
         <p
           data-en="Get real-time updates about your car status, parking and payments."
@@ -124,9 +146,9 @@
     </div>
 
     <div class="step step-even">
-      <img src="assets/screenshot4.png" alt="Step 4" />
+      <img src="assets/screenshot10.png" alt="Step 4" />
       <div class="step-text">
-        <div class="step-number" data-en="Step 4" data-pl="Krok 4">Step 4</div>
+        <div class="step-number" data-en="4" data-pl="4">4</div>
         <h3 data-en="Parking map" data-pl="Mapa parkingów">Parking map</h3>
         <p
           data-en="Track available parking spots on the map."
@@ -135,11 +157,10 @@
         </p>
       </div>
     </div>
-
   </div>
 </section>
 
-<section class="slider-block">
+<section id="demo-slider" class="slider-block">
   <div class="container">
     <h2>Demo</h2>
 
@@ -156,51 +177,68 @@
         <div class="swiper-slide"><img src="assets/screenshot9.png" alt="Slide 9"/></div>
       </div>
 
-      <div class="swiper-button-prev material-button">
-        <span class="material-icons-outlined">arrow_back</span>
-      </div>
-      <div class="swiper-button-next material-button">
-        <span class="material-icons-outlined">arrow_forward</span>
-      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
 
       <div class="swiper-pagination"></div>
-    </div>
   </div>
 </section>
 
 <section id="contacts" class="contacts-block">
-  <div class="container">
-    <h2 data-en="Contacts & Policy" data-pl="Kontakt i polityka">Contacts & Policy</h2>
-
-    <p data-en="Email us at" data-pl="Napisz do nas na">
-      Email us at <a href="mailto:example@mail.com">example@mail.com</a>
-    </p>
-
-    <p data-en="To delete your account data, contact us." data-pl="Aby usunąć dane konta, skontaktuj się z nami.">
-      To delete your account data, contact us.
-    </p>
-
-    <p data-en="Privacy Policy" data-pl="Polityka prywatności">
-      <a href="https://example.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-    </p>
-
-    <div class="store-links" style="margin-top: 20px;">
-      <a href="#" aria-label="App Store">
-        <img src="assets/stores/appstore.png" alt="App Store" />
-      </a>
-      <a href="#" aria-label="Google Play">
-        <img src="assets/stores/googleplay.png" alt="Google Play" />
-      </a>
+  <div class="container contacts-grid">
+    <!-- Левая колонка -->
+    <div class="contacts-left">
+      <h1 class="title-with-logo">
+        SPOKO PARK
+        <img src="assets/spoko_park_logo.png" alt="Logo" class="logo-inline" />
+      </h1>
+      <p data-en="Find & Pay Parking in Seconds" data-pl="Znajdź i zapłać za parking w sekundach">
+        Find & Pay Parking in Seconds
+      </p>
+      <div class="store-links compact-links">
+        <a href="#"><img src="assets/stores/appstore.png" alt="App Store" /></a>
+        <a href="#"><img src="assets/stores/googleplay.png" alt="Google Play" /></a>
+      </div>
     </div>
 
-    <p style="margin-top: 30px; font-size: 0.9em; color: #888;" data-en="© 2025 SPOKO PARK. All rights reserved." data-pl="© 2025 SPOKO PARK. Wszelkie prawa zastrzeżone.">
-      © 2025 SPOKO PARK. All rights reserved.
-    </p>
+    <!-- Правая колонка -->
+    <div class="contacts-right">
+      <h2 data-en="Contacts & Policy" data-pl="Kontakt i polityka">Contacts & Policy</h2>
+
+      <p data-en="Email us at" data-pl="Napisz do nas na">
+        Email us at <a href="mailto:info@spokopark.pl">info@spokopark.pl</a>
+      </p>
+
+      <p data-en="To delete your account data, contact us." data-pl="Aby usunąć dane konta, skontaktuj się z nami.">
+        To delete your account data, contact us.
+      </p>
+
+      <p data-en="Privacy Policy" data-pl="Polityka prywatności">
+        <a 
+          id="privacy-policy-link"
+          href="#" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          data-href-en="http://parkingpoland.cloud:9005/static/2025.05.29%20-%20Polityka%20prywatnos%CC%81ci%20i%20ODO%20-%20ENG.pdf"
+          data-href-pl="http://parkingpoland.cloud:9005/static/2025.05.29%20-%20Polityka%20prywatności%20i%20ODO%20-%20PL.pdf"
+        >
+          Privacy Policy
+        </a>
+      </p>
+      <p style="margin-top: 20px;" data-en="Made with ❤️" data-pl="Zrobione z ❤️">
+        Made with ❤️
+      </p>
+
+      <p style="margin-top: 20px; font-size: 0.9em; color: #888;" data-en="© 2025 SPOKO PARK. All rights reserved." data-pl="© 2025 SPOKO PARK. Wszelkie prawa zastrzeżone.">
+        © 2025 SPOKO PARK. All rights reserved.
+      </p>
+    </div>
   </div>
 </section>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
-
 </body>
 </html>
