@@ -202,7 +202,8 @@ nav .nav-btn.active {
     flex-direction: column;
     text-align: center;
     height: auto;
-    padding-top: 120px; /* учитываем шапку */
+    justify-content: center; 
+    padding: 60px 20px;
     gap: 24px;
   }
 
