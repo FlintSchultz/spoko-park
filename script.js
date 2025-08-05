@@ -1,7 +1,7 @@
 // Языковой переключатель
 const btnEn = document.getElementById('en-btn'),
-      btnPl = document.getElementById('pl-btn'),
-      navBtns = document.querySelectorAll('.nav-btn');
+  btnPl = document.getElementById('pl-btn'),
+  navBtns = document.querySelectorAll('.nav-btn');
 btnEn.onclick = () => switchLang('en');
 btnPl.onclick = () => switchLang('pl');
 function switchLang(lang) {
@@ -34,8 +34,8 @@ function switchLang(lang) {
       el.textContent = el.dataset[lang];
     }
   });
-  btnEn.classList.toggle('active', lang==='en');
-  btnPl.classList.toggle('active', lang==='pl'); 
+  btnEn.classList.toggle('active', lang === 'en');
+  btnPl.classList.toggle('active', lang === 'pl');
 }
 
 const burger = document.querySelector('.burger');
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
   switchLang(initialLang);
 
   // Анимация How it works
-    const steps = document.querySelectorAll(".step");
+  const steps = document.querySelectorAll(".step");
   const wrapper = document.querySelector(".sticky-wrapper");
   const vh = window.innerHeight;
 
@@ -99,7 +99,7 @@ navBtns.forEach(btn => {
     navBtns.forEach(b => b.classList.remove('active'));
     // Добавляем .active текущей
     btn.classList.add('active');
-    document.getElementById(btn.dataset.target).scrollIntoView({ behavior:'smooth' });
+    document.getElementById(btn.dataset.target).scrollIntoView({ behavior: 'smooth' });
   });
 });
 
